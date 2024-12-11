@@ -1,0 +1,112 @@
+:root {
+    /* Section Background Colors */
+    --section-bg-1: #A7D180;
+    --section-bg-2: #D9D9A9;
+    --section-bg-3: #DB6430;
+    --section-bg-4: #6E5E39;
+    --background-color: #FCFAF5;
+    --text-color: #312F2F;
+
+    --font-poppins: 'Poppins', 'Poppins Placeholder', sans-serif;
+    --font-inter: 'Inter', 'Inter Placeholder', sans-serif;
+    --font-raleway: 'Raleway', sans-serif;
+    --font-roboto: 'Roboto', sans-serif;
+    --font-logo: "Qwitcher Grypen", cursive;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Ensures table is scrollable on smaller screens */
+    margin: 20px 0;
+    border: 1px solid #ddd; /* Optional: Add a border around the table */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: var(--font-poppins);
+}
+
+.fl-table {
+    width: 100%;
+    border-collapse: collapse; /* Removes default spacing between table cells */
+    background-color: #fff;
+    text-align: left;
+    font-family: var(--font-poppins);
+    font-size: 14px;
+}
+
+.fl-table thead {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.fl-table thead th {
+    padding: 12px;
+    border-bottom: 2px solid #ddd;
+}
+
+.fl-table tbody tr {
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.fl-table tbody tr:hover {
+    background-color: #f9f9f9; /* Light gray for hover effect */
+}
+
+.fl-table td {
+    padding: 10px;
+}
+
+.fl-table a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.fl-table a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+
+/* Medium Screens (Tablets): Adjust font size and make table scrollable */
+@media (max-width: 768px) {
+    .fl-table {
+        font-size: 12px; /* Reduce font size for smaller screens */
+    }
+    .table-wrapper {
+        overflow-x: scroll;
+    }
+}
+
+/* Small Screens (Phones): Stack table rows */
+@media (max-width: 480px) {
+    .fl-table, .fl-table thead, .fl-table tbody, .fl-table th, .fl-table td, .fl-table tr {
+        display: block;
+    }
+
+    /* .fl-table thead {
+        display: none;
+    }
+    */
+
+    .fl-table tbody tr {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #fff;
+    }
+
+    .fl-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .fl-table td::before {
+        content: attr(data-label); /* Add a label for each data cell */
+        font-weight: bold;
+        margin-right: 10px;
+        text-transform: capitalize;
+    }
+}
